@@ -1,8 +1,7 @@
 import pygame as pg
 
 
-BG_COLOR = (155, 213, 175)
-TRIM_COLOR = (216, 245, 231)
+WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 pg.init()
@@ -11,7 +10,7 @@ class Gameboard:
     def __init__(self):
         self.screen = pg.display.set_mode((600, 600))
         pg.display.set_caption('Tic-tac-toe')
-        self.screen.fill(BG_COLOR)
+        self.screen.fill(BLACK)
         pg.display.flip()
         self.clock = pg.time.Clock()
         self.state = True
@@ -26,7 +25,11 @@ class Gameboard:
         
         for item in lines:
             pg.draw.line(surface=self.screen,
-                        color=TRIM_COLOR,
+                        color=WHITE,
                         start_pos=item[0],
                         end_pos=item[1],
-                        width=1)
+                        width=2)
+            
+    
+    def add_marker(self):
+        pass
